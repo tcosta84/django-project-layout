@@ -1,0 +1,40 @@
+#Project name
+
+A brief description
+
+##System dependencies
+
+* Ex: Django 1.7, Python 2.7.8, Postgres
+
+##Setup instructions
+
+###Create and activate virtualenv
+
+    virtualenv --no-site-packages {virtualenvs_path}/{project_name}
+    source {virtualenvs_path}/{project_name}/bin/activate
+
+###Install requirements
+
+    cd {project_folder}
+    pip install -r requirements.txt
+
+###Create database
+
+    createdb -U postgres -E utf-8 {database_name}
+
+###Create database tables
+
+    cd {project_folder}/src
+    ./manage.py migrate
+
+###Create admin user
+
+    cd {project_folder}/src
+    ./manage.py createsuperuser
+
+###Test it!
+    
+    cd {project_folder}/src
+    ./manage.py runserver
+
+    xdg-open http://localhost:8000/
